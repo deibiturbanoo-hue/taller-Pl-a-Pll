@@ -11,10 +11,12 @@ public class InvertirCadena {
         System.out.print("Ingrese una cadena de texto: ");
         String texto = teclado.nextLine();
 
-        String invertida = "";
+        // Uso StringBuilder en vez de concatenar con + dentro del for,
+        // porque es mas eficiente: evita crear un String nuevo en cada vuelta del bucle.
+        StringBuilder invertida = new StringBuilder();
 
         for (int i = texto.length() - 1; i >= 0; i--) {
-            invertida += texto.charAt(i);
+            invertida.append(texto.charAt(i));
         }
 
         System.out.println("Cadena invertida: " + invertida);
